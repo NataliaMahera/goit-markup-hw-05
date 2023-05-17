@@ -156,21 +156,18 @@ body {
 }
 
 .menu-item-link {
+    position: relative;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--primary-text-color-theme-light);
-    padding: 24px 0 24px;
+    padding: 28px 0 28px;
     transition: color var(--transition-dur-and-func);
 }
 
 .menu-item:not(:last-child) {
     margin-right: 40px;
-}
-
-.menu-item-link {
-    position: relative;
 }
 
 .current::after {
@@ -183,6 +180,12 @@ body {
     height: 4px;
     border-radius: 2px;
     background-color: var(--accent-color);
+    transition: background-color var(--transition-dur-and-func);
+    opacity: 0;
+}
+
+.current:hover::after {
+    opacity: 1;
 }
 
 .menu-item-link:hover,
@@ -293,73 +296,6 @@ body {
 }
 
 /* ===============/HERO================= */
-
-/* ===============MODAL WINDOW================= */
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity var(--transition-dur-and-func), 
-    visibility var(--transition-dur-and-func);
-}
-
-.backdrop.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.modal-window {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 408px;
-    height: 584px;
-    border-radius: 4px;
-    background-color: var(--modal-color);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.modal-close-btn {
-    position: absolute;
-    top: 24px;
-    right: 23px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    padding: 0;
-    background-color: var(--secondary-page-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: border-color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
-}
-
-.modal-close-btn-icon {
-    fill: var(--background-color-theme-dark);
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-    border-color: var(--accent-color);
-    background-color: var(--accent-color);
-}
-
-.modal-close-btn:hover .modal-close-btn-icon,
-.modal-close-btn:focus .modal-close-btn-icon {
-    fill: var(--background-color-theme-light);
-}
-
-.modal-close-btn-icon {
-    transition: fill var(--transition-dur-and-func);
-}
-/* ===============/MODAL WINDOW================= */
 
 /* ===============FEATURES================= */
 .features-list {
@@ -637,3 +573,70 @@ body {
 /* ===============/GALLERY================= */
 
 /* ===============/PORTFOLIO-PAGE================= */
+
+/* ===============MODAL WINDOW================= */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity var(--transition-dur-and-func), 
+    visibility var(--transition-dur-and-func);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    height: 584px;
+    border-radius: 4px;
+    background-color: var(--modal-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: var(--secondary-page-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
+}
+
+.modal-close-btn-icon {
+    fill: var(--background-color-theme-dark);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+    fill: var(--background-color-theme-light);
+}
+
+.modal-close-btn-icon {
+    transition: fill var(--transition-dur-and-func);
+}
+/* ===============/MODAL WINDOW================= */
