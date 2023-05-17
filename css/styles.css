@@ -169,6 +169,22 @@ body {
     margin-right: 40px;
 }
 
+.menu-item-link {
+    position: relative;
+}
+
+.current::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    display: block; 
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+
 .menu-item-link:hover,
 .menu-item-link:focus {
     color: var(--accent-color);
