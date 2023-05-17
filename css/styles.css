@@ -162,7 +162,7 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--primary-text-color-theme-light);
-    padding: 28px 0 28px;
+    padding: 26px 0 26px;
     transition: color var(--transition-dur-and-func);
 }
 
@@ -173,7 +173,7 @@ body {
 .current::after {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     content: '';
     display: block; 
     width: 100%;
@@ -415,7 +415,8 @@ body {
 }
 
 .customers-list-link {
-    transition: color var(--transition-dur-and-func), border-color var(--transition-dur-and-func)
+    transition: border-color var(--transition-dur-and-func),
+    color var(--transition-dur-and-func);
 }
 
 .customers-list-link:hover,
@@ -495,7 +496,7 @@ body {
     padding: 12px 24px;
     transition: color var(--transition-dur-and-func), 
     background-color var(--transition-dur-and-func),
-    border var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func),
     box-shadow var(--transition-dur-and-func);
 }
 
@@ -560,7 +561,7 @@ body {
     height: 100%;
     background-color:var(--accent-page-color);
     color: var(--primary-text-color-theme-dark);
-    padding: 40px 32px 164px;
+    padding: 40px 32px;
     overflow: auto;
     transform: translate(0, 100%);
     transition: transform var(--transition-dur-and-func)
@@ -599,16 +600,17 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 408px;
-    height: 584px;
+    min-height: 576px;
     border-radius: 4px;
     background-color: var(--modal-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-dur-and-func);
 }
 
 .modal-close-btn {
     position: absolute;
     top: 24px;
-    right: 23px;
+    right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -618,7 +620,8 @@ body {
     padding: 0;
     background-color: var(--secondary-page-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: border-color var(--transition-dur-and-func), background-color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func),
+    border var(--transition-dur-and-func);
 }
 
 .modal-close-btn-icon {
@@ -627,7 +630,7 @@ body {
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-    border-color: var(--accent-color);
+    border: none;
     background-color: var(--accent-color);
 }
 
