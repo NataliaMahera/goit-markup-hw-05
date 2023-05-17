@@ -11,6 +11,8 @@
     --background-color-theme-light: #FFFFFF;
     --background-color-theme-dark: #2E2F42;
     --accent-background-color: #31D0AA;
+    --modal-color: #FCFCFC;
+    --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -273,6 +275,72 @@ body {
 
 /* ===============/HERO================= */
 
+/* ===============MODAL WINDOW================= */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    height: 584px;
+    border-radius: 4px;
+    background-color: var(--modal-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: var(--secondary-page-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border-color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
+}
+
+.modal-close-btn-icon {
+    fill: var(--background-color-theme-dark);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+    fill: var(--background-color-theme-light);
+}
+
+.modal-close-btn-icon {
+    transition: fil var(--transition-dur-and-func);
+}
+/* ===============/MODAL WINDOW================= */
+
 /* ===============FEATURES================= */
 .features-list {
     display: flex;
@@ -513,6 +581,29 @@ body {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.gallery-list-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay-gallery-portfolio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:var(--accent-page-color);
+    color: var(--primary-text-color-theme-dark);
+    padding: 40px 32px 164px;
+    overflow: auto;
+    transform: translate(0, 100%);
+    transition: transform var(--transition-dur-and-func)
+}
+
+.gallery-list-link:hover .overlay-gallery-portfolio,
+.gallery-list-link:focus .overlay-gallery-portfolio {
+    transform: translate(0, 0);
+}
 /* ===============/GALLERY================= */
 
 /* ===============/PORTFOLIO-PAGE================= */
