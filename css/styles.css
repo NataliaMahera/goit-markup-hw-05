@@ -184,6 +184,10 @@ body {
     opacity: 0;
 }
 
+.current {
+    color: var(--accent-color);
+}
+
 .current:hover::after {
     opacity: 1;
 }
